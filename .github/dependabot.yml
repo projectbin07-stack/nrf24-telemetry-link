@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: pip
+    versioning-strategy: increase-if-necessary
+    directory: /host
+    schedule:
+      interval: monthly

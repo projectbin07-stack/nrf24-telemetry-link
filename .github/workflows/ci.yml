@@ -1,0 +1,110 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PLATFORMIO_VERSION: "6.1.18"
+
+jobs:
+  native-tests:
+    name: Native unit tests (linkcore)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Cache PlatformIO
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: pio-native-${{ runner.os }}-${{ hashFiles('platformio.ini') }}
+          restore-keys: pio-native-${{ runner.os }}-
+      - name: Install PlatformIO
+        run: pip install "platformio==${PLATFORMIO_VERSION}"
+      - name: Run unit tests
+        run: pio test -e native -v
+
+  firmware:
+    name: Build ${{ matrix.environment }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment:
+          - nanoatmega328
+          - nanoatmega328_gateway
+          - esp32dev
+          - esp32dev_gateway
+          - nucleo_f401re
+          - nucleo_f401re_gateway
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Cache PlatformIO
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: pio-${{ matrix.environment }}-${{ runner.os }}-${{ hashFiles('platformio.ini') }}
+          restore-keys: pio-${{ matrix.environment }}-${{ runner.os }}-
+      - name: Install PlatformIO
+        run: pip install "platformio==${PLATFORMIO_VERSION}"
+      - name: Build firmware
+        run: pio run -e ${{ matrix.environment }} | tee build.log
+      - name: Report firmware size
+        run: |
+          {
+            echo "### ${{ matrix.environment }}"
+            echo '```'
+            grep -E '^(RAM|Flash):' build.log
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+  host:
+    name: Host tool (${{ matrix.os }}, ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.13"]
+    defaults:
+      run:
+        working-directory: host
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: host/pyproject.toml
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Type check
+        run: mypy
+      - name: Test
+        run: pytest --cov=nrflink --cov-report=term-missing
+      - name: Shared test vectors are up to date
+        run: nrflink vectors
+      - name: Link simulator smoke test
+        run: nrflink simulate --loss 0.3 --burst 5 --duration 5 --wifi 6
