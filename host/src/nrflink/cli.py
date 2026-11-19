@@ -251,7 +251,7 @@ def cmd_sweep(args: argparse.Namespace, out: IO[str]) -> int:
             x_format="{:g}%",
             y_format="{:g}%",
         )
-        Path(args.svg).write_text(svg, encoding="utf-8")
+        Path(args.svg).write_text(svg, encoding="utf-8", newline="\n")
         print(f"wrote {args.svg}", file=out)
     return 0
 
