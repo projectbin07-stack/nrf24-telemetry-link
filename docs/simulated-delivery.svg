@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" font-family="Helvetica, Arial, sans-serif" font-size="12" role="img" aria-label="SIMULATED delivery ratio vs per-packet loss (nrflink link simulator)">
+<rect width="760" height="440" fill="#ffffff"/>
+<text x="70" y="22" font-size="15" font-weight="bold" fill="#222">SIMULATED delivery ratio vs per-packet loss (nrflink link simulator)</text>
+<text x="70" y="41" fill="#555">Not measured on hardware. 30 s simulated per point, seed 1, 1 Mbit/s, ARD 500 us, 8-channel hopping.</text>
+<line x1="70" y1="344.0" x2="736" y2="344.0" stroke="#e3e3e3"/>
+<text x="62" y="348.0" text-anchor="end" fill="#444">0%</text>
+<line x1="70" y1="288.0" x2="736" y2="288.0" stroke="#e3e3e3"/>
+<text x="62" y="292.0" text-anchor="end" fill="#444">20%</text>
+<line x1="70" y1="232.0" x2="736" y2="232.0" stroke="#e3e3e3"/>
+<text x="62" y="236.0" text-anchor="end" fill="#444">40%</text>
+<line x1="70" y1="176.0" x2="736" y2="176.0" stroke="#e3e3e3"/>
+<text x="62" y="180.0" text-anchor="end" fill="#444">60%</text>
+<line x1="70" y1="120.0" x2="736" y2="120.0" stroke="#e3e3e3"/>
+<text x="62" y="124.0" text-anchor="end" fill="#444">80%</text>
+<line x1="70" y1="64.0" x2="736" y2="64.0" stroke="#e3e3e3"/>
+<text x="62" y="68.0" text-anchor="end" fill="#444">100%</text>
+<line x1="70.0" y1="344" x2="70.0" y2="349" stroke="#444"/>
+<text x="70.0" y="363" text-anchor="middle" fill="#444">0%</text>
+<line x1="260.3" y1="344" x2="260.3" y2="349" stroke="#444"/>
+<text x="260.3" y="363" text-anchor="middle" fill="#444">20%</text>
+<line x1="450.6" y1="344" x2="450.6" y2="349" stroke="#444"/>
+<text x="450.6" y="363" text-anchor="middle" fill="#444">40%</text>
+<line x1="640.9" y1="344" x2="640.9" y2="349" stroke="#444"/>
+<text x="640.9" y="363" text-anchor="middle" fill="#444">60%</text>
+<rect x="70" y="64" width="666" height="280" fill="none" stroke="#888"/>
+<text x="403.0" y="384" text-anchor="middle" fill="#222">per-packet loss probability (data and ACK packets), %</text>
+<text transform="translate(18 204.0) rotate(-90)" text-anchor="middle" fill="#222">messages delivered, %</text>
+<polyline points="70.0,64.0 165.1,64.0 260.3,64.0 355.4,64.0 450.6,64.0 545.7,64.0 640.9,65.5 736.0,73.6" fill="none" stroke="#0072B2" stroke-width="2"/>
+<circle cx="70.0" cy="64.0" r="4" fill="#0072B2"/>
+<circle cx="165.1" cy="64.0" r="4" fill="#0072B2"/>
+<circle cx="260.3" cy="64.0" r="4" fill="#0072B2"/>
+<circle cx="355.4" cy="64.0" r="4" fill="#0072B2"/>
+<circle cx="450.6" cy="64.0" r="4" fill="#0072B2"/>
+<circle cx="545.7" cy="64.0" r="4" fill="#0072B2"/>
+<circle cx="640.9" cy="65.5" r="4" fill="#0072B2"/>
+<circle cx="736.0" cy="73.6" r="4" fill="#0072B2"/>
+<polyline points="70.0,64.0 165.1,64.0 260.3,67.0 355.4,68.5 450.6,70.0 545.7,77.0 640.9,81.6 736.0,86.6" fill="none" stroke="#D55E00" stroke-width="2"/>
+<rect x="66.5" y="60.5" width="7" height="7" fill="#D55E00"/>
+<rect x="161.6" y="60.5" width="7" height="7" fill="#D55E00"/>
+<rect x="256.8" y="63.5" width="7" height="7" fill="#D55E00"/>
+<rect x="351.9" y="65.0" width="7" height="7" fill="#D55E00"/>
+<rect x="447.1" y="66.5" width="7" height="7" fill="#D55E00"/>
+<rect x="542.2" y="73.5" width="7" height="7" fill="#D55E00"/>
+<rect x="637.4" y="78.1" width="7" height="7" fill="#D55E00"/>
+<rect x="732.5" y="83.1" width="7" height="7" fill="#D55E00"/>
+<polyline points="70.0,64.0 165.1,64.0 260.3,64.5 355.4,67.5 450.6,75.0 545.7,89.5 640.9,105.6 736.0,135.6" fill="none" stroke="#009E73" stroke-width="2"/>
+<polygon points="70.0,59.5 65.5,67.5 74.5,67.5" fill="#009E73"/>
+<polygon points="165.1,59.5 160.6,67.5 169.6,67.5" fill="#009E73"/>
+<polygon points="260.3,60.0 255.8,68.0 264.8,68.0" fill="#009E73"/>
+<polygon points="355.4,63.0 350.9,71.0 359.9,71.0" fill="#009E73"/>
+<polygon points="450.6,70.5 446.1,78.5 455.1,78.5" fill="#009E73"/>
+<polygon points="545.7,85.0 541.2,93.0 550.2,93.0" fill="#009E73"/>
+<polygon points="640.9,101.1 636.4,109.1 645.4,109.1" fill="#009E73"/>
+<polygon points="736.0,131.1 731.5,139.1 740.5,139.1" fill="#009E73"/>
+<polyline points="70.0,64.0 165.1,64.0 260.3,64.0 355.4,64.0 450.6,64.0 545.7,64.0 640.9,64.0 736.0,64.0" fill="none" stroke="#CC79A7" stroke-width="2"/>
+<polygon points="70.0,59.0 75.0,64.0 70.0,69.0 65.0,64.0" fill="#CC79A7"/>
+<polygon points="165.1,59.0 170.1,64.0 165.1,69.0 160.1,64.0" fill="#CC79A7"/>
+<polygon points="260.3,59.0 265.3,64.0 260.3,69.0 255.3,64.0" fill="#CC79A7"/>
+<polygon points="355.4,59.0 360.4,64.0 355.4,69.0 350.4,64.0" fill="#CC79A7"/>
+<polygon points="450.6,59.0 455.6,64.0 450.6,69.0 445.6,64.0" fill="#CC79A7"/>
+<polygon points="545.7,59.0 550.7,64.0 545.7,69.0 540.7,64.0" fill="#CC79A7"/>
+<polygon points="640.9,59.0 645.9,64.0 640.9,69.0 635.9,64.0" fill="#CC79A7"/>
+<polygon points="736.0,59.0 741.0,64.0 736.0,69.0 731.0,64.0" fill="#CC79A7"/>
+<line x1="70.0" y1="402" x2="92.0" y2="402" stroke="#0072B2" stroke-width="2"/>
+<circle cx="81.0" cy="402.0" r="4" fill="#0072B2"/>
+<text x="100.0" y="406" fill="#222">telemetry, independent, ARC=15</text>
+<line x1="403.0" y1="402" x2="425.0" y2="402" stroke="#D55E00" stroke-width="2"/>
+<rect x="410.5" y="398.5" width="7" height="7" fill="#D55E00"/>
+<text x="433.0" y="406" fill="#222">telemetry, burst 10 pkts, ARC=15</text>
+<line x1="70.0" y1="420" x2="92.0" y2="420" stroke="#009E73" stroke-width="2"/>
+<polygon points="81.0,415.5 76.5,423.5 85.5,423.5" fill="#009E73"/>
+<text x="100.0" y="424" fill="#222">telemetry, independent, ARC=3</text>
+<line x1="403.0" y1="420" x2="425.0" y2="420" stroke="#CC79A7" stroke-width="2"/>
+<polygon points="414.0,415.0 419.0,420.0 414.0,425.0 409.0,420.0" fill="#CC79A7"/>
+<text x="433.0" y="424" fill="#222">commands, burst 10 pkts, ARC=15</text>
+</svg>
