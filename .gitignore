@@ -1,0 +1,30 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.venv/
+venv/
+build/
+dist/
+
+# Logs written by the host tool
+*.csv
+/logs/
+
+# OS
+.DS_Store
+Thumbs.db

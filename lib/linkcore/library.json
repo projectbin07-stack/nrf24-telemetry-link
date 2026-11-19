@@ -1,0 +1,8 @@
+{
+  "name": "linkcore",
+  "version": "0.1.0",
+  "description": "Hardware-independent nRF24L01+ driver (abstract SPI/GPIO), link layer with fragmentation, CRC-16, reliable and best-effort channels, channel hopping, link-quality metrics, a compact telemetry schema and COBS serial framing.",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}
