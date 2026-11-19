@@ -202,7 +202,7 @@ def cmd_sweep(args: argparse.Namespace, out: IO[str]) -> int:
     ]
     print(
         f"SIMULATED (not measured): {args.duration:g} s per point, seed {args.seed}, "
-        "1 Mbit/s, ARD 500 us, telemetry every 50 ms, a command every 500 ms, "
+        "1 Mbit/s, ARD 500 us, telemetry every 50 ms, a command every 503 ms, "
         "8-channel hopping",
         file=out,
     )
@@ -309,7 +309,7 @@ def build_parser() -> argparse.ArgumentParser:
     sim.add_argument("--duration", type=float, default=30.0, help="simulated seconds")
     sim.add_argument("--seed", type=int, default=1)
     sim.add_argument("--period", type=int, default=50, help="telemetry period, ms")
-    sim.add_argument("--command-period", type=int, default=500, help="ms between commands")
+    sim.add_argument("--command-period", type=int, default=503, help="ms between commands")
     sim.add_argument("--no-hop", action="store_true", help="stay on --channel")
     sim.add_argument("--channel", type=int, default=76)
     sim.add_argument("--wifi", type=int, default=None, help="Wi-Fi channel (1-13) interfering")

@@ -163,7 +163,7 @@ class SimConfig:
     interference: Interference = field(default_factory=Interference)
     telemetry_period_ms: int = 50
     poll_interval_ms: int = 10
-    command_period_ms: int = 500
+    command_period_ms: int = 503  # not a multiple of the 50 ms hop slot: samples all phases
     hopping: bool = True
     fixed_channel: int = 76
     hop_seed: int = 0x4E524634
