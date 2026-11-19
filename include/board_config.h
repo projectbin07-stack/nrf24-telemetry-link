@@ -1,7 +1,7 @@
 // Pin maps and radio settings shared by the node and the gateway firmware.
 //
 // Every value can be overridden with a -D build flag. The nRF24L01+ module
-// must be powered from 3.3 V (1.9 - 3.6 V, product specification Table 6);
+// must be powered from 3.3 V (1.9 - 3.6 V, product specification section 4);
 // its SPI and CE inputs are 5 V tolerant, so the Nano can drive them
 // directly. See README.md "Wiring" for the decoupling capacitor note.
 #pragma once

@@ -210,7 +210,7 @@ void setup() {
 #if NTL_PIN_LED >= 0
   pinMode(NTL_PIN_LED, OUTPUT);
 #endif
-  delay(100);  // let the module's supply and the chip settle after power-on
+  delay(100);  // power-on reset (spec Table 14) and supply settling on the module
   g_csn.begin(true);
   g_ce.begin(false);
   SPI.begin();

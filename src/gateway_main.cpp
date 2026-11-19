@@ -131,7 +131,7 @@ void refill_ack_payloads(uint32_t now) {
 
 void setup() {
   Serial.begin(NTL_SERIAL_BAUD);
-  delay(100);  // let the module's supply and the chip settle after power-on
+  delay(100);  // power-on reset (spec Table 14) and supply settling on the module
   g_csn.begin(true);
   g_ce.begin(false);
   SPI.begin();
