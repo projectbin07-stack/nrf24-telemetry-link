@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling>=1.24,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nrflink"
+dynamic = ["version"]
+description = "Host tools for nrf24-telemetry-link: gateway frame decoder, command CLI and an nRF24L01+ link simulator"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Navaneeth KG" }]
+dependencies = ["pyserial>=3.5,<4"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: System :: Networking",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "pytest-cov>=5,<8",
+    "ruff>=0.6,<1",
+    "mypy>=1.10,<3",
+]
+
+[project.scripts]
+nrflink = "nrflink.cli:main"
+
+[tool.hatch.version]
+path = "src/nrflink/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nrflink"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "PT", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# Compound assertions read better for multi-field protocol checks.
+"tests/*" = ["PT018"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src/nrflink", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["serial", "serial.*"]
+ignore_missing_imports = true
